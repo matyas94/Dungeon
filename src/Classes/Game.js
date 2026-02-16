@@ -164,22 +164,22 @@ export class Game{
     setupInputs() {
     window.addEventListener("keydown", (e) => {
         this.inputKeys[e.key] = true;
-        this.enemies.enemy1.update(this.player, this.sword)
-        this.enemies.enemy2.update(this.player, this.sword)
-        this.enemies.enemy3.update(this.player, this.sword)
-        this.enemies.enemy4.update(this.player, this.sword)
-        this.enemies.enemy5.update(this.player, this.sword)
-        this.enemies.enemy6.update(this.player, this.sword)
-        this.enemies.enemy7.update(this.player, this.sword)
-        this.enemies.enemy8.update(this.player, this.sword)
-        this.enemies.enemy9.update(this.player, this.sword)
-        this.enemies.enemy10.update(this.player, this.sword)
-        this.enemies.enemy11.update(this.player, this.sword)
-        this.enemies.enemy12.update(this.player, this.sword)
-        this.enemies.enemy13.update(this.player, this.sword)
-        this.enemies.enemy14.update(this.player, this.sword)
-        this.enemies.enemy15.update(this.player, this.sword)
-        this.enemies.enemy16.update(this.player, this.sword)
+        this.enemies.enemy1.update(this.player, this.sword, this.map)
+        this.enemies.enemy2.update(this.player, this.sword, this.map)
+        this.enemies.enemy3.update(this.player, this.sword, this.map)
+        this.enemies.enemy4.update(this.player, this.sword, this.map)
+        this.enemies.enemy5.update(this.player, this.sword, this.map)
+        this.enemies.enemy6.update(this.player, this.sword, this.map)
+        this.enemies.enemy7.update(this.player, this.sword, this.map)
+        this.enemies.enemy8.update(this.player, this.sword, this.map)
+        this.enemies.enemy9.update(this.player, this.sword, this.map)
+        this.enemies.enemy10.update(this.player, this.sword, this.map)
+        this.enemies.enemy11.update(this.player, this.sword, this.map)
+        this.enemies.enemy12.update(this.player, this.sword, this.map)
+        this.enemies.enemy13.update(this.player, this.sword, this.map)
+        this.enemies.enemy14.update(this.player, this.sword, this.map)
+        this.enemies.enemy15.update(this.player, this.sword, this.map)
+        this.enemies.enemy16.update(this.player, this.sword, this.map)
 
         //console.log(this.inputKeys);
     });

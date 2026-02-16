@@ -22,12 +22,15 @@ export class Enemy{
         }
     }
 
-    update(player, sword){
+    update(player, sword, map){
         if (this.active){
             if (player.x < this.x){
                 this.x -= this.tilesize
             }
             if (player.x > this.x){
+                const targetX = this.x + this.tilesize;
+                const targetY = this.y;
+                
                 this.x += this.tilesize
             }
             if (player.y < this.y){
