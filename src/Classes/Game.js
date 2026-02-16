@@ -3,6 +3,7 @@ import { Map } from "./Map"
 import { Player } from "./Player"
 import { Sword } from "./Sword"
 import { Door } from "./Door"
+import { Enemy } from "./Enemy"
 
 export class Game{
     constructor(canvasId){
@@ -39,6 +40,11 @@ export class Game{
             door10 : new Door(this.tileSize, 10, 1, 11)
 
         }
+
+        this.enemies = {
+            enemy1 : new Enemy(this.tileSize, 1, 11, 2)
+        }
+
         this.openDoors = {}
 
         this.inputKeys = {}
@@ -75,6 +81,8 @@ export class Game{
         this.doors.door9.draw(this.ctx)
         this.doors.door10.draw(this.ctx)
 
+        this.enemies.enemy1.draw(this.ctx)
+
         this.player.draw(this.ctx)
         this.sword.draw(this.ctx)
     }
@@ -98,15 +106,17 @@ export class Game{
                 Object.values(this.doors).forEach(door => {
                     if (door.id === key.id) {
                         door.isOpen = true;
+                        Object.values(this.enemies).forEach(enemy =>{
+                            if (enemy.id === door.id){
+                                enemy.active = true
+                            }
+                        })
                         this.openDoors[door.id] = door
-                        console.log(this.openDoors);
-                        console.log(this.doors);
-                        
-                        
                     }
                 });
             }
         });
+        
 
         const allKeys = Object.values(this.keys);
         const hasAllKeys = allKeys.every(key => this.inventory.includes(key));
@@ -122,6 +132,7 @@ export class Game{
     setupInputs() {
     window.addEventListener("keydown", (e) => {
         this.inputKeys[e.key] = true;
+        this.enemies.enemy1.update(this.player, this.sword)
         //console.log(this.inputKeys);
     });
     window.addEventListener("keyup", (e) => {
