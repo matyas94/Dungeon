@@ -42,7 +42,23 @@ export class Game{
         }
 
         this.enemies = {
-            enemy1 : new Enemy(this.tileSize, 1, 11, 2)
+            enemy1 : new Enemy(this.tileSize, 1, 11, 2),
+            enemy2 : new Enemy(this.tileSize, 2, 16, 4),
+            enemy3 : new Enemy(this.tileSize, 2, 19, 3),
+            enemy4 : new Enemy(this.tileSize, 3, 11, 4),
+            enemy5 : new Enemy(this.tileSize, 3, 10, 4),
+            enemy6 : new Enemy(this.tileSize, 3, 1, 5),
+            enemy7 : new Enemy(this.tileSize, 4, 3, 9),
+            enemy8 : new Enemy(this.tileSize, 4, 4, 9),
+            enemy9 : new Enemy(this.tileSize, 5, 9, 9),
+            enemy10 : new Enemy(this.tileSize, 5, 10, 9),
+            enemy11 : new Enemy(this.tileSize, 5, 10, 8),
+            enemy12 : new Enemy(this.tileSize, 6, 13, 12),
+            enemy13 : new Enemy(this.tileSize, 7, 18, 8),
+            enemy14 : new Enemy(this.tileSize, 7, 19, 8),
+            enemy15 : new Enemy(this.tileSize, 7, 18, 7),
+            enemy16 : new Enemy(this.tileSize, 7, 19, 7)
+
         }
 
         this.openDoors = {}
@@ -82,6 +98,22 @@ export class Game{
         this.doors.door10.draw(this.ctx)
 
         this.enemies.enemy1.draw(this.ctx)
+        this.enemies.enemy2.draw(this.ctx)
+        this.enemies.enemy3.draw(this.ctx)
+        this.enemies.enemy4.draw(this.ctx)
+        this.enemies.enemy5.draw(this.ctx)
+        this.enemies.enemy6.draw(this.ctx)
+        this.enemies.enemy7.draw(this.ctx)
+        this.enemies.enemy8.draw(this.ctx)
+        this.enemies.enemy9.draw(this.ctx)
+        this.enemies.enemy10.draw(this.ctx)
+        this.enemies.enemy11.draw(this.ctx)
+        this.enemies.enemy12.draw(this.ctx)
+        this.enemies.enemy13.draw(this.ctx)
+        this.enemies.enemy14.draw(this.ctx)
+        this.enemies.enemy15.draw(this.ctx)
+        this.enemies.enemy16.draw(this.ctx)
+
 
         this.player.draw(this.ctx)
         this.sword.draw(this.ctx)
@@ -133,6 +165,22 @@ export class Game{
     window.addEventListener("keydown", (e) => {
         this.inputKeys[e.key] = true;
         this.enemies.enemy1.update(this.player, this.sword)
+        this.enemies.enemy2.update(this.player, this.sword)
+        this.enemies.enemy3.update(this.player, this.sword)
+        this.enemies.enemy4.update(this.player, this.sword)
+        this.enemies.enemy5.update(this.player, this.sword)
+        this.enemies.enemy6.update(this.player, this.sword)
+        this.enemies.enemy7.update(this.player, this.sword)
+        this.enemies.enemy8.update(this.player, this.sword)
+        this.enemies.enemy9.update(this.player, this.sword)
+        this.enemies.enemy10.update(this.player, this.sword)
+        this.enemies.enemy11.update(this.player, this.sword)
+        this.enemies.enemy12.update(this.player, this.sword)
+        this.enemies.enemy13.update(this.player, this.sword)
+        this.enemies.enemy14.update(this.player, this.sword)
+        this.enemies.enemy15.update(this.player, this.sword)
+        this.enemies.enemy16.update(this.player, this.sword)
+
         //console.log(this.inputKeys);
     });
     window.addEventListener("keyup", (e) => {
