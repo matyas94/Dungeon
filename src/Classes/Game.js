@@ -4,6 +4,7 @@ import { Player } from "./Player"
 import { Sword } from "./Sword"
 import { Door } from "./Door"
 import { Enemy } from "./Enemy"
+import { Heal } from "./Heal"
 
 export class Game{
     constructor(canvasId){
@@ -14,6 +15,12 @@ export class Game{
         this.map = new Map(this.tileSize)
         this.player = new Player(this.tileSize)
         this.sword = new Sword(this.tileSize, this.player)
+
+        this.heal1 = new Heal(this.tileSize, 18, 1, 5, false)
+        this.heal2 = new Heal(this.tileSize, 18, 6, 5, false)
+        this.heal3 = new Heal(this.tileSize, 9, 8, 5, false)
+        this.heal4 = new Heal(this.tileSize, 28, 12, 5, true)
+
         this.keys = {
             key1 : new Key(this.tileSize, 1, 6, 2),
             key2 : new Key(this.tileSize, 2, 13, 2),
@@ -114,12 +121,25 @@ export class Game{
         this.enemies.enemy15.draw(this.ctx)
         this.enemies.enemy16.draw(this.ctx)
 
+        this.heal1.draw(this.ctx)
+        this.heal2.draw(this.ctx)
+        this.heal3.draw(this.ctx)
+        this.heal4.draw(this.ctx)
+
+
 
         this.player.draw(this.ctx)
         this.sword.draw(this.ctx)
+        
     }
 
     update(){
+
+
+        this.heal1.update(this.player)
+        this.heal2.update(this.player)
+        this.heal3.update(this.player)
+        this.heal4.update(this.player)
 
 
 
@@ -158,7 +178,7 @@ export class Game{
             this.doors.door10.isOpen = true
         }
 
-        this.player.update(this.inputKeys, this.prevInputKeys, this.map, this.doors)
+        this.player.update(this.inputKeys, this.prevInputKeys, this.map, this.doors, this.enemies)
         this.prevInputKeys = { ...this.inputKeys }
     }
     setupInputs() {
@@ -185,6 +205,12 @@ export class Game{
     });
     window.addEventListener("keyup", (e) => {
         this.inputKeys[e.key] = false;
+                Object.values(this.enemies).forEach(enemy => {
+            if (this.player.x === enemy.x && this.player.y === enemy.y && !enemy.dead){
+                this.player.health -= enemy.dmg
+                
+                
+        }})
     });
     }
     loop(){

@@ -7,7 +7,7 @@ export class Player{
     this.image = document.querySelector("#player")
     
     this.dmg = 5
-
+    this.health = 20
     this.look = "right"
     }
 
@@ -18,10 +18,18 @@ export class Player{
             this.x,
             this.y
         )
+        ctx.fillStyle = "#00FF00"
+        ctx.textAlign = "center"
+        ctx.font = "bold 20px serif"
+        ctx.fillText(
+            this.health,
+            this.x + this.tileSize *0.5,
+            this.y - this.tileSize *0.1
+        )
 
     }
 
-    update(inputKeys, prevInputKeys, map, doors) {
+    update(inputKeys, prevInputKeys, map, doors, enemies){ 
 
 
 
@@ -78,6 +86,12 @@ export class Player{
         if (inputKeys["ArrowDown"] && !prevInputKeys["ArrowDown"]){
             this.look = "down"
         }
+        // Object.values(enemies).forEach(enemy => {
+        //     if (this.x === enemy.x && this.y === enemy.y && !enemy.dead){
+        //         this.health -= enemy.dmg
+        //         console.log(this.health);
+                
+        //     }})
     }
 
 

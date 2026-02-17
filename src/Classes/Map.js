@@ -54,7 +54,7 @@ this.layout = [
                 }
                 if (tile == 2){
                     //key
-                    ctx.fillStyle = 'gray'
+                    ctx.fillStyle = 'black'
                     ctx.fillRect(x,y,this.tileSize,this.tileSize)
                     // keret
                     ctx.stroke = "black"
@@ -62,7 +62,7 @@ this.layout = [
                 }
                 if (tile == 3){
                     //door
-                    ctx.fillStyle = 'orange'
+                    ctx.fillStyle = 'black'
                     ctx.fillRect(x,y,this.tileSize,this.tileSize)
                     // keret
                     ctx.stroke = "black"

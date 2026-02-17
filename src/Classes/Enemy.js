@@ -8,6 +8,7 @@ export class Enemy{
         this.active = false
         this.health = 5
         this.dead = false
+        this.dmg = 1
     }
 
     draw(ctx){
@@ -76,22 +77,18 @@ export class Enemy{
 
             if (sword.x - this.tilesize/2 == this.x){
                 this.health -= sword.dmg
-                console.log(this.health);
                 
                 }
             if (sword.x + this.tilesize/2 == this.x){
                 this.health -= sword.dmg
-                console.log(this.health);
                 
                 }
-            if (sword.y - this.tilesize/2 == this.x){
+            if (sword.y - this.tilesize/2 == this.y){
                 this.health -= sword.dmg
-                console.log(this.health);
                 
                 }
-            if (sword.y + this.tilesize/2 == this.x){
+            if (sword.y + this.tilesize/2 == this.y){
                 this.health -= sword.dmg
-                console.log(this.health);
                 
                 }
 
