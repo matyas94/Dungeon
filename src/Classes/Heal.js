@@ -32,11 +32,11 @@ export class Heal{
     update(player){
         if (player.x === this.x && player.y === this.y && !this.pickedUp){
             if (!this.superheal){
-                if (player.health <= 15){
+                if (player.health <= 50){
                     player.health += this.healing
                     this.pickedUp = true
                 } else {
-                    player.health = 20
+                    player.health = 100
                     this.pickedUp = true
                 }
             } else {

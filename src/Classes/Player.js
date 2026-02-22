@@ -6,8 +6,7 @@ export class Player{
     this.y = tileSize *2;
     this.image = document.querySelector("#player")
     
-    this.dmg = 5
-    this.health = 20
+    this.health = 100
     this.look = "right"
     }
 
@@ -29,8 +28,7 @@ export class Player{
 
     }
 
-    update(inputKeys, prevInputKeys, map, doors, enemies){ 
-
+    update(inputKeys, prevInputKeys, map, doors){ 
 
 
         // Only move if key is newly pressed (was not pressed last frame)
@@ -86,6 +84,7 @@ export class Player{
         if (inputKeys["ArrowDown"] && !prevInputKeys["ArrowDown"]){
             this.look = "down"
         }
+        
         // Object.values(enemies).forEach(enemy => {
         //     if (this.x === enemy.x && this.y === enemy.y && !enemy.dead){
         //         this.health -= enemy.dmg

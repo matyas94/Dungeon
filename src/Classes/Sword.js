@@ -7,7 +7,7 @@ export class Sword{
         this.image_left = document.querySelector("#sword_left")
         this.image_up = document.querySelector("#sword_up")
         this.image_down = document.querySelector("#sword_down")
-        this.dmg = 1
+        this.dmg = 50
 
         this.player = player
     }

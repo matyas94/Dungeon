@@ -6,9 +6,9 @@ export class Enemy{
         this.x = tilesize * x
         this.y = tilesize * y
         this.active = false
-        this.health = 5
+        this.health = 500
         this.dead = false
-        this.dmg = 1
+        this.dmg = 10
     }
 
     draw(ctx){
@@ -19,18 +19,14 @@ export class Enemy{
                 this.y)
             ctx.textAlign = "center"
             ctx.font = "bold 20px serif"
-            switch(this.health){
-                case 5: ctx.fillStyle = "#00FF00"
-                break;
-                case 4: ctx.fillStyle = "#9ACD32"
-                break;
-                case 3: ctx.fillStyle = "#FFFF00"
-                break;
-                case 2: ctx.fillStyle = "#FFA500"
-                break;
-                case 1: ctx.fillStyle = "#FF0000"
-                break;
-            }
+            
+            if(this.health <= 500 && this.health > 400) {ctx.fillStyle = "#00FF00"}
+            if(this.health <= 400 && this.health > 300) {ctx.fillStyle = "#9ACD32"}
+            if(this.health <= 300 && this.health > 200) {ctx.fillStyle = "#FFFF00"}
+            if(this.health <= 200 && this.health > 100) {ctx.fillStyle = "#FFA500"}
+            if(this.health <= 100 && this.health > 0) {ctx.fillStyle = "#FF0000"}
+
+            
             
             ctx.fillText(
                 this.health,
@@ -75,24 +71,24 @@ export class Enemy{
                 }
             }
 
-            if (sword.x - this.tilesize/2 == this.x){
+            if (sword.x - this.tilesize/2 == this.x && sword.y == this.y){
                 this.health -= sword.dmg
                 
                 }
-            if (sword.x + this.tilesize/2 == this.x){
+            if (sword.x + this.tilesize/2 == this.x && sword.y == this.y){
                 this.health -= sword.dmg
                 
                 }
-            if (sword.y - this.tilesize/2 == this.y){
+            if (sword.y - this.tilesize/2 == this.y && sword.x == this.x){
                 this.health -= sword.dmg
                 
                 }
-            if (sword.y + this.tilesize/2 == this.y){
+            if (sword.y + this.tilesize/2 == this.y && sword.x == this.x){
                 this.health -= sword.dmg
                 
                 }
 
-            if(this.health === 0){
+            if(this.health <= 0){
                 this.dead = true
             }
 
