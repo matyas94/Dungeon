@@ -270,10 +270,10 @@ export class Game{
         this.player = new Player(this.tileSize)
         this.sword = new Sword(this.tileSize, this.player)
 
-        this.heal1 = new Heal(this.tileSize, 18, 1, 5, false)
-        this.heal2 = new Heal(this.tileSize, 18, 6, 5, false)
-        this.heal3 = new Heal(this.tileSize, 9, 8, 5, false)
-        this.heal4 = new Heal(this.tileSize, 28, 12, 5, true)
+        this.heal1 = new Heal(this.tileSize, 18, 1, 50, false)
+        this.heal2 = new Heal(this.tileSize, 18, 6, 50, false)
+        this.heal3 = new Heal(this.tileSize, 9, 8, 50, false)
+        this.heal4 = new Heal(this.tileSize, 28, 12, 50, true)
 
         this.keys = {
             key1 : new Key(this.tileSize, 1, 6, 2),
