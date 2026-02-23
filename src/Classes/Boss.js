@@ -48,8 +48,7 @@ export class Boss{
 
             // if (sword.x - this.tilesize/2 == this.x && sword.y == this.y){
             //     this.health -= sword.dmg
-            if (sword.x === this.x1 - this.tilesize/2 ||)
-
+            // if (sword.x === this.x1 + this.tilesize/2 ||)
             //     }
             // if (sword.x + this.tilesize/2 == this.x && sword.y == this.y){
             //     this.health -= sword.dmg

@@ -71,7 +71,7 @@ this.layout = [
                 }
                 if (tile == 4){
                     //item
-                    ctx.fillStyle = 'green'
+                    ctx.fillStyle = 'black'
                     ctx.fillRect(x,y,this.tileSize,this.tileSize)
                     // keret
                     ctx.stroke = "black"
